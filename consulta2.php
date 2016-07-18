@@ -12,17 +12,17 @@ $campaign_id = $_POST["campaign_id"];
 
 					while ($reg2=mysql_fetch_array($consulta2)) {
 
-					 	echo $reg2['rc_call_id'];
+					 	echo $reg2['rc_call_id']."</br>";
 
-						echo $reg2['status'];
+						echo $reg2['status']."</br>";
 
-						echo $reg2['attempt'];
+						echo $reg2['attempt']."</br>";
 
-						echo $reg2['start_date'];
+						echo $reg2['start_date']."</br>";
 
-						echo $reg2['mobile_number'];
+						echo $reg2['mobile_number']."</br>";
 
-						echo $reg2['rc_campaign_id'];
+						echo $reg2['rc_campaign_id']."</br>";
 					
  
 					}
