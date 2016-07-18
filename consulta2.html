@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>POST</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+	<script>
+	//alert("hello world");
+	//console.log("esto es la console");
+	  $.get('consulta1.php',function(data){
+               //console.log(data);
+               $('#receptor').html(data);
+               //alert(data);
+            });
+
+	</script>
+</head>
+<body>
+<div id='receptor'></div>
+
+
+</body>
+</html>
