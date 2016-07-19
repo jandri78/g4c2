@@ -17,6 +17,8 @@
 		}
 
 		mysql_close($consulta1);
+
+		
 	
 
 
