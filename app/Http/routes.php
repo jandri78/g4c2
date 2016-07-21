@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+  ///  return view('layout/master');
+//});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('campaigns', ['as' => 'campaigns', 'uses' => 'HomeController@campaigns']);
