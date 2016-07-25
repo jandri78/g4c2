@@ -28,4 +28,15 @@ class HomeController extends Controller
 	{
     	return view('consulta');
 	}
+
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function login()
+	{
+    	return view('login/masterlogin');
+	}
 }

@@ -15,4 +15,5 @@
   ///  return view('layout/master');
 //});
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('login', ['as' => 'login', 'uses' => 'HomeController@login']);
 Route::get('campaigns', ['as' => 'campaigns', 'uses' => 'HomeController@campaigns']);
