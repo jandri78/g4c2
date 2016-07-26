@@ -62,23 +62,22 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <div class="navbar-header pull-left">
+                <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
-                        <small>
-                            <i class="fa fa-leaf"></i>
-                            G4Clients
-                        </small>
+                        {!! HTML::image('assets/img/go4Clients-logo-site.png', 'alt', array( 'width' => '180px', 'height' => '30px' )) !!}
+                        
                     </a>
                 </div>
 
                 <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                     <!-- Authentication Links -->
+                    @if (!Auth::guest())
                     <ul class="nav ace-nav">
                         <li class="light-blue">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
-                                    <small>Welcome,</small>
-                                    Andres
+                                    <small>Bienvenido,</small>
+                                    {{ Auth::user()->name }}
                                 </span>
 
                                 <i class="ace-icon fa fa-caret-down"></i>
@@ -86,23 +85,7 @@
 
                             <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                                 <li>
-                                    <a href="#">
-                                        <i class="ace-icon fa fa-cog"></i>
-                                        Settings
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="profile.html">
-                                        <i class="ace-icon fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-
-                                <li class="divider"></li>
-
-                                <li>
-                                    <a href="#">
+                                    <a href="{{ url('/logout') }}">
                                         <i class="ace-icon fa fa-power-off"></i>
                                         Logout
                                     </a>
@@ -110,6 +93,7 @@
                             </ul>
                         </li>
                     </ul>
+                    @endif
                 </div>
             </div><!-- /.navbar-container -->
         </div>
@@ -395,7 +379,7 @@
                 <div class="footer-inner">
                     <div class="footer-content">
                         <span class="bigger-120">
-                            <span class="blue bolder">G4Clients</span>
+                            <span class="blue bolder">Go4Clients</span>
                             Application &copy; 2016
                         </span>
                     </div>

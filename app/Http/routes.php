@@ -11,9 +11,15 @@
 |
 */
 
-//Route::get('/', function () {
-  ///  return view('layout/master');
-//});
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('login', ['as' => 'login', 'uses' => 'HomeController@login']);
-Route::get('campaigns', ['as' => 'campaigns', 'uses' => 'HomeController@campaigns']);
+Route::get('/', function () {
+    return view('auth/login');
+});
+
+Route::group(['middleware' => ['web']], function(){
+
+	Route::auth();
+	Route::get('/home', 'HomeController@index');
+	Route::get('campaigns', ['as' => 'campaigns', 'uses' => 'HomeController@campaigns']);
+});
+
+
