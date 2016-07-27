@@ -1,7 +1,7 @@
 <?php
 $servidor = "10.170.0.231";
-$usuario = "consulta"; 
-$contrasenha = "Qu3ry";  
+$usuario = "consulta2";
+$contrasenha = "Qu3ry";
 $BD = "cdr_sansay"; 
 
 $conexion = @mysql_connect($servidor, $usuario, $contrasenha) or die(mysql_error()); 
