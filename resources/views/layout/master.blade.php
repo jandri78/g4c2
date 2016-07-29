@@ -10,7 +10,7 @@
 
         <!-- bootstrap & fontawesome -->
       
-        {!! HTML::style('assets/css/bootstrap.min.css') !!}
+        {!! HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') !!}
         {!! HTML::style('assets/font-awesome/4.2.0/css/font-awesome.min.css') !!}
 
         <!-- page specific plugin styles -->
@@ -37,6 +37,13 @@
 
         {!! HTML::script('assets/js/ace-extra.min.js') !!}
 
+        {!! HTML::script('https://code.jquery.com/jquery-3.1.0.js') !!}
+        {!! HTML::script('https://code.jquery.com/jquery-3.1.0.min.js') !!}
+
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
         <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
         <!--[if lte IE 8]>
@@ -50,6 +57,7 @@
             <script type="text/javascript">
                 try{ace.settings.check('navbar' , 'fixed')}catch(e){}
             </script>
+            <input type="hidden" id="urlgeneral" value="{!!URL::to('/')!!}"/> 
 
             <div class="navbar-container" id="navbar-container">
                 <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -149,7 +157,8 @@
                     </li>
 
                     <li class="">
-                        <a href="#" class="dropdown-toggle">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+
                             <i class="menu-icon fa fa-desktop"></i>
                             <span class="menu-text">
                                 UI &amp; Elements
@@ -161,72 +170,6 @@
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-                            <li class="">
-                                <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-
-                                    Layouts
-                                    <b class="arrow fa fa-angle-down"></b>
-                                </a>
-
-                                <b class="arrow"></b>
-
-                                <ul class="submenu">
-                                    <li class="">
-                                        <a href="top-menu.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Top Menu
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="two-menu-1.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Two Menus 1
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="two-menu-2.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Two Menus 2
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="mobile-menu-1.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Default Mobile Menu
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="mobile-menu-2.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Mobile Menu 2
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="mobile-menu-3.html">
-                                            <i class="menu-icon fa fa-caret-right"></i>
-                                            Mobile Menu 3
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-                                </ul>
-                            </li>
 
                             <li class="">
                                 <a href="{{ URL::route('campaigns')}}">
@@ -238,9 +181,9 @@
                             </li>
 
                             <li class="">
-                                <a href="elements.html">
+                                <a href="{{ URL::route('usuario.index')}}">
                                     <i class="menu-icon fa fa-caret-right"></i>
-                                    Elements
+                                    Usuarios
                                 </a>
 
                                 <b class="arrow"></b>
@@ -284,73 +227,6 @@
                     </div>
 
                     <div class="page-content">
-                        <div class="ace-settings-container" id="ace-settings-container">
-                            <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-                                <i class="ace-icon fa fa-cog bigger-130"></i>
-                            </div>
-
-                            <div class="ace-settings-box clearfix" id="ace-settings-box">
-                                <div class="pull-left width-50">
-                                    <div class="ace-settings-item">
-                                        <div class="pull-left">
-                                            <select id="skin-colorpicker" class="hide">
-                                                <option data-skin="no-skin" value="#438EB9">#438EB9</option>
-                                                <option data-skin="skin-1" value="#222A2D">#222A2D</option>
-                                                <option data-skin="skin-2" value="#C6487E">#C6487E</option>
-                                                <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-                                            </select>
-                                        </div>
-                                        <span>&nbsp; Choose Skin</span>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
-                                        <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
-                                        <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
-                                        <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
-                                        <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
-                                        <label class="lbl" for="ace-settings-add-container">
-                                            Inside
-                                            <b>.container</b>
-                                        </label>
-                                    </div>
-                                </div><!-- /.pull-left -->
-
-                                <div class="pull-left width-50">
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
-                                        <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
-                                        <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
-                                    </div>
-
-                                    <div class="ace-settings-item">
-                                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
-                                        <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
-                                    </div>
-                                </div><!-- /.pull-left -->
-                            </div><!-- /.ace-settings-box -->
-                        </div><!-- /.ace-settings-container -->
-
                         <div class="page-header">
                             <h1>
                                 Dashboard
@@ -362,9 +238,10 @@
                         </div><!-- /.page-header -->
 
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-xs-11">
                                 <!-- PAGE CONTENT BEGINS -->
                                 <div class="container">
+                                <div id="loading-admin-app" class="modal fade" role="dialog" aria-hidden="true"></div>
                                     @yield('content')
                                 </div>
 
@@ -389,12 +266,13 @@
             <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
                 <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
             </a>
-        </div><!-- /.main-container -->
+        </div><!-- /.main-container -->   
 
         <!-- basic scripts -->
 
         <!--[if !IE]> -->
         {!! HTML::script('assets/js/jquery.2.1.1.min.js') !!}
+        <script>window.document.url = "{{ URL::to('/') }}";</script>
 
 
         <!-- <![endif]-->
@@ -418,15 +296,15 @@
         <script type="text/javascript">
             if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
         </script>
-        {!! HTML::script('assets/js/bootstrap.min.js') !!}
-
-
 
         <!-- page specific plugin scripts -->
 
         <!--[if lte IE 8]>
           <script src="assets/js/excanvas.min.js"></script>
         <![endif]-->
+
+        {!! HTML::script('js/laroute.js') !!}
+        {!! HTML::script('assets/js/bootstrap.min.js') !!}
 
         {!! HTML::script('assets/js/jquery-ui.custom.min.js') !!}
         {!! HTML::script('assets/js/jquery.ui.touch-punch.min.js') !!}

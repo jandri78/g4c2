@@ -152,6 +152,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
 
+
         /*
          * Application Service Providers...
          */
@@ -159,6 +160,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        Lord\Laroute\LarouteServiceProvider::class,
+
 
     ],
 
@@ -207,6 +211,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
+
     ],
 
 ];

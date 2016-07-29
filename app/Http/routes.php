@@ -22,4 +22,5 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('campaigns', ['as' => 'campaigns', 'uses' => 'HomeController@campaigns']);
 });
 
+Route::resource('usuario', 'UsuarioController', ['only' => ['index', 'create', 'store', 'update', 'destroy']]);
 
