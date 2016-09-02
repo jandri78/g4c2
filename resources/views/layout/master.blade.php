@@ -40,7 +40,7 @@
         {!! HTML::script('https://code.jquery.com/jquery-3.1.0.js') !!}
         {!! HTML::script('https://code.jquery.com/jquery-3.1.0.min.js') !!}
 
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!--<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 
 
 
